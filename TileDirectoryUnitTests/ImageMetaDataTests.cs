@@ -59,5 +59,21 @@ namespace TileDirectoryUnitTests
 
             Assert.AreEqual(missionExpectedOther, imgData.Mission);
         }
+
+        [TestMethod]
+        public void CorpusShipCanBeFoundAsTilesetFromFirstSet()
+        {
+            ImageData imgData = new ImageData(metaData);
+
+            Assert.AreEqual(tilesetExpected, imgData.Tileset);
+        }
+
+        [TestMethod]
+        public void OrokinMoonCanBeFoundAsTilesetFromSecondSet()
+        {
+            ImageData imgData = new ImageData(secondMetaData);
+
+            Assert.AreEqual(tilesetExpectedOther, imgData.Tileset);
+        }
     }
 }

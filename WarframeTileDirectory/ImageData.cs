@@ -15,18 +15,46 @@ namespace WarframeTileDirectory
 
 
         private string metaData;
+        private string tilesetPlusMission;
 
         public ImageData(string metaData)
         {
             this.metaData = metaData;
+            SetMetaData();
             this.Mission = GetMission();
+            this.Tileset = GetTileset();
+        }
+
+        private void SetMetaData()
+        {
+            string[] metaDataSplit = metaData.Split(' ');
+            string[] firstSectionOfMetaData = metaDataSplit[0].Split('/');
+            this.tilesetPlusMission = firstSectionOfMetaData[5];
+        }
+
+        private string GetTileset()
+        {
+            
+            return TilesetFromMission(tilesetPlusMission);
+        }
+
+        private string TilesetFromMission(string value)
+        {
+            string[] tilesetArray = TileLogic.GenerateTilesetList();
+
+            string name = tilesetArray.Where(x => value.Contains(x)).First().ToString();
+            
+            if(string.IsNullOrEmpty(name))
+            {
+                return value + "??? - Check Me: ";
+            } else
+            {
+                return name;
+            }
         }
 
         private string GetMission()
         {
-            string[] metaDataSplit = metaData.Split(' ');
-            string[] firstSectionOfMetaData = metaDataSplit[0].Split('/');
-            string tilesetPlusMission = firstSectionOfMetaData[5];
 
             return GetMissionType(tilesetPlusMission);
 
@@ -35,7 +63,7 @@ namespace WarframeTileDirectory
         public string GetMissionType(string value)
         {
 
-            var types = TileLogic.GenMissionList();
+            var types = TileLogic.GenerateMissionList();
 
             string name = types.Where(x => value.Contains(x.InGameName)).First().CommonName;
 
@@ -43,12 +71,15 @@ namespace WarframeTileDirectory
             if (value == "CorpusShip")
             {
                 return "Assassination (The Sergeant)";
+
             }else if (value == "GrineerAsteroid")
             {
                 return "Sabotage (Drill)";
+
             }else if (string.IsNullOrEmpty(name))
             {
-                return value + "??? - Check Me: " + value;
+                return value + "??? - Check Me: ";
+
             } else
             {
                 return name;
