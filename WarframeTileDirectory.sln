@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarframeTileDirectory", "WarframeTileDirectory\WarframeTileDirectory.csproj", "{5628E375-BF97-4FB4-80C5-EA23E8B4B6B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileDirectoryUnitTests", "TileDirectoryUnitTests\TileDirectoryUnitTests.csproj", "{9AF6F9F8-1B0F-4024-8FF6-2744E5FE1D18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5628E375-BF97-4FB4-80C5-EA23E8B4B6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5628E375-BF97-4FB4-80C5-EA23E8B4B6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5628E375-BF97-4FB4-80C5-EA23E8B4B6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5628E375-BF97-4FB4-80C5-EA23E8B4B6B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF6F9F8-1B0F-4024-8FF6-2744E5FE1D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF6F9F8-1B0F-4024-8FF6-2744E5FE1D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF6F9F8-1B0F-4024-8FF6-2744E5FE1D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF6F9F8-1B0F-4024-8FF6-2744E5FE1D18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96BC6B67-3B31-4AD5-9507-9FD894A716DF}
+	EndGlobalSection
+EndGlobal
