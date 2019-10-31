@@ -1,0 +1,17 @@
+CorpusGasCity
+CorpusIcePlanet
+CorpusOutpost
+InfestedCorpusShip
+CorpusShip
+CorpusToGrineer
+GrineerAsteroid
+GrineerForest
+GrineerFortress
+GrineerGalleon
+GrineerOcean
+GrineerSettlement
+GrineerShipyards
+GrineerToCorpus
+OrokinTowerDerelict
+OrokinMoon
+OrokinTower

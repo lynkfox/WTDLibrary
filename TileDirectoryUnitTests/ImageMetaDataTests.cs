@@ -23,7 +23,7 @@ namespace TileDirectoryUnitTests
 
 
         string secondMetaData = "/Lotus/Levels/Proc/Orokin/OrokinMoonSurvival/JKhLQlALNQMw2TwsGnoIaejD2QiOABTAAAQBAEAAgAA.lp  Zone: /Lotus/Levels/OrokinMoon/MoonSpawn03  P: -166, -13, -158  H:15  Log: 17218.486";
-        string missionExpectedOther = "Surviva";
+        string missionExpectedOther = "Survival";
         string tilesetExpectedOther = "OrokinMoon";
         string tileExpectedOther = "MoonSpawn03";
         string missionStringExpectedOther = "JKhLQlALNQMw2TwsGnoIaejD2QiOABTAAAQBAEAAgAA";
@@ -45,11 +45,19 @@ namespace TileDirectoryUnitTests
         }
 
         [TestMethod]
-        public void ExtractionCanBePulledFromMetaDataAsMission()
+        public void ExterminateCanBePulledFromMetaDataAsMission()
         {
             ImageData imgData = new ImageData(metaData);
 
             Assert.AreEqual(missionExpected, imgData.Mission);
+        }
+
+        [TestMethod]
+        public void SecondMetaDataCanPullSurvivalAsMission()
+        {
+            ImageData imgData = new ImageData(secondMetaData);
+
+            Assert.AreEqual(missionExpectedOther, imgData.Mission);
         }
     }
 }
