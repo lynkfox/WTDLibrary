@@ -8,7 +8,7 @@ namespace TileDirectoryUnitTests
     {
         string missionExpected = "Exterminate";
         string tilesetExpected = "CorpusShip";
-        string tileExpected = "CargoElevator2";
+        string tileExpected = "CorpusShipCargoElevator2"; //The name is being adjusted because of duplicate names
         string missionStringExpected = "EKEdCEI+QQEQ6hUlxfQ9M5zMyAgYRFgAQA0ACAEA";
         string logExpected = "2975.081";
         string coordinatesExpected = "-56, 5.0, -61 | 148";
@@ -25,7 +25,7 @@ namespace TileDirectoryUnitTests
         string secondMetaData = "/Lotus/Levels/Proc/Orokin/OrokinMoonSurvival/JKhLQlALNQMw2TwsGnoIaejD2QiOABTAAAQBAEAAgAA.lp  Zone: /Lotus/Levels/OrokinMoon/MoonSpawn03  P: -166, -13, -158  H:15  Log: 17218.486";
         string missionExpectedOther = "Survival";
         string tilesetExpectedOther = "OrokinMoon";
-        string tileExpectedOther = "MoonSpawn03";
+        string tileExpectedOther = "OrokinMoonSpawn03"; //adjustment due to duplicate names.
         string missionStringExpectedOther = "JKhLQlALNQMw2TwsGnoIaejD2QiOABTAAAQBAEAAgAA";
         string logExpectedOther = "17218.486";
         string coordinatesExpectedOther = "-166, -13, -158 | 15";
@@ -74,6 +74,22 @@ namespace TileDirectoryUnitTests
             ImageData imgData = new ImageData(secondMetaData);
 
             Assert.AreEqual(tilesetExpectedOther, imgData.Tileset);
+        }
+
+        [TestMethod]
+        public void CorpusShipCargoElevator2IsFoundAsTileNameFromFirstSet()
+        {
+            ImageData imgData = new ImageData(metaData);
+
+            Assert.AreEqual(tileExpected, imgData.TileName);
+        }
+
+        [TestMethod]
+        public void OrokinMoonSpawn03IsFoundAsTileNameFromSecondSet()
+        {
+            ImageData imgData = new ImageData(secondMetaData);
+
+            Assert.AreEqual(tileExpectedOther, imgData.TileName);
         }
     }
 }
